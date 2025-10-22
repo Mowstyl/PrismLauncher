@@ -34,9 +34,6 @@
  */
 
 #include "GZip.h"
-#ifdef _MSC_VER
-#define ZLIB_WINAPI
-#endif
 #include <zlib.h>
 #include <QByteArray>
 #include <QDebug>
