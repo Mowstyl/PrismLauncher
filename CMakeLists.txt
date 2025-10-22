@@ -504,7 +504,7 @@ else()
 endif()
 if (FORCE_BUNDLED_QUAZIP)
     message(STATUS "Using bundled QuaZip")
-    set_target_properties(QuaZip PROPERTIES EMSCRIPTEN 1)  # link statically to avoid conflicts.
+    set(EMSCRIPTEN TRUE)  # link statically to avoid conflicts.
     add_subdirectory(libraries/quazip) # zip manipulation library
 else()
     message(STATUS "Using system QuaZip")
