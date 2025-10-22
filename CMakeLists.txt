@@ -494,8 +494,8 @@ if(FORCE_BUNDLED_ZLIB)
     endif()
 
     set(ZLIB_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}/libraries/zlib" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/zlib" CACHE STRING "" FORCE)
-    set_target_properties(zlib PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${ZLIB_INCLUDE_DIR}")
-    add_library(ZLIB::ZLIB ALIAS zlib)
+    set_target_properties(zlibstatic PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${ZLIB_INCLUDE_DIR}")
+    add_library(ZLIB::ZLIB ALIAS zlibstatic)
     set(ZLIB_LIBRARY ZLIB::ZLIB CACHE STRING "zlib library name")
 
     find_package(ZLIB REQUIRED)
@@ -504,8 +504,7 @@ else()
 endif()
 if (FORCE_BUNDLED_QUAZIP)
     message(STATUS "Using bundled QuaZip")
-    set(BUILD_SHARED_LIBS 0)  # link statically to avoid conflicts.
-    set(QUAZIP_INSTALL 0)
+    set(EMSCRIPTEN 1)  # link statically to avoid conflicts.
     add_subdirectory(libraries/quazip) # zip manipulation library
 else()
     message(STATUS "Using system QuaZip")
