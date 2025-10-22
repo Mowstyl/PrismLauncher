@@ -494,8 +494,8 @@ if(FORCE_BUNDLED_ZLIB)
     endif()
 
     set(ZLIB_INCLUDE_DIR "${CMAKE_CURRENT_BINARY_DIR}/libraries/zlib" "${CMAKE_CURRENT_SOURCE_DIR}/libraries/zlib" CACHE STRING "" FORCE)
-    set_target_properties(zlibstatic PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${ZLIB_INCLUDE_DIR}")
-    add_library(ZLIB::ZLIB ALIAS zlibstatic)
+    set_target_properties(zlibshared PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${ZLIB_INCLUDE_DIR}")
+    add_library(ZLIB::ZLIB SHARED ALIAS zlibshared)
     set(ZLIB_LIBRARY ZLIB::ZLIB CACHE STRING "zlib library name")
 
     find_package(ZLIB REQUIRED)
