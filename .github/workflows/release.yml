@@ -2,34 +2,10 @@ name: Build Application and Make Release
 
 on:
   push:
-    # tags:
-    #   - "*"
-    branches-ignore:
-      - "renovate/**"
-    paths:
-      # File types
-      - "**.cpp"
-      - "**.h"
-      - "**.java"
-
-      # Directories
-      - "buildconfig/"
-      - "cmake/"
-      - "launcher/"
-      - "libraries/"
-      - "program_info/"
-      - "tests/"
-
-      # Files
-      - "CMakeLists.txt"
-      - "COPYING.md"
-
-      # Workflows
-      - ".github/workflows/build.yml"
-      - ".github/workflows/release.yml"
-  workflow_dispatch:
-
-permissions: {}
+    branches:
+      - "develop"
+    tags:
+      - "*"
 
 jobs:
   build_release:
