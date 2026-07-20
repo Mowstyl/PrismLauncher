@@ -61,7 +61,7 @@ PrismExternalUpdater::PrismExternalUpdater(QWidget* parent, const QString& appDi
     priv->settings = std::make_unique<QSettings>(settings_file, QSettings::Format::IniFormat);
     priv->allowBeta = priv->settings->value("allow_beta", true).toBool();
     priv->autoCheck = priv->settings->value("auto_check", false).toBool();
-    bool interval_ok = false;
+    bool intervalOk = false;
     // default once per day
     priv->updateInterval = priv->settings->value("update_interval", 86400).toInt(&intervalOk);
     if (!intervalOk) {
