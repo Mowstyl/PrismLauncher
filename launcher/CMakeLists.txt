@@ -1480,9 +1480,9 @@ get_property(Launcher_TARGETS DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY BUI
 foreach(target ${Launcher_TARGETS})
     message(STATUS "Enabling all warnings as errors for target '${target}'")
     if (CMAKE_CXX_COMPILER_FRONTEND_VARIANT STREQUAL "MSVC")
-        target_compile_options(${target} PRIVATE /W4 /WX /permissive-)
+        target_compile_options(${target} PRIVATE /W4 /permissive-)
     else()
-        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Werror)
     endif()
 endforeach()
 
