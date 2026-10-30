@@ -1430,6 +1430,7 @@ if(WIN32 OR (DEFINED Launcher_BUILD_FILELINKER AND Launcher_BUILD_FILELINKER))
     # Thank you 2018 CMake mailing list thread https://cmake.cmake.narkive.com/LnotZXus/conflicting-msvc-manifests
     if(MSVC)
         set_property(TARGET "${Launcher_Name}_filelink" PROPERTY LINK_FLAGS "/MANIFESTUAC:level='requireAdministrator'")
+        target_compile_options(Launcher_logic PRIVATE /wd4458)
     endif()
 
     target_link_libraries("${Launcher_Name}_filelink" filelink_logic)
