@@ -14,7 +14,7 @@
 
 Auto compile every Sunday. Link to latest build:
 
-[Latest Builds on service nightly.link](https://nightly.link/Mowstyl/PrismLauncher/workflows/trigger_builds/develop)
+[Latest Builds on service nightly.link](https://nightly.link/Mowstyl/PrismLauncher/workflows/release/develop)
 
 ### For NixOS users
 
